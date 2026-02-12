@@ -193,6 +193,35 @@
     .btn-lock { background: var(--surface); color: var(--text); border: 1px solid var(--border) !important; }
     .btn-close { background: var(--surface); color: var(--text-dim); }
     .btn-disabled { background: var(--surface); color: var(--text-dim); cursor: not-allowed; opacity: 0.5; }
+    /* Tree View */
+    .tree-view { position: relative; overflow-x: auto; padding: 2rem 1rem; }
+    .tree-svg { display: block; margin: 0 auto; }
+    .tree-svg line {
+      stroke: var(--border);
+      stroke-width: 2;
+      transition: stroke 0.3s;
+    }
+    .tree-svg line.lit { stroke: var(--green); stroke-width: 2.5; }
+    .tree-svg line.available-edge { stroke: var(--yellow); stroke-dasharray: 6 3; stroke-width: 2; }
+    .tree-node {
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .tree-node:hover { filter: brightness(1.2); }
+    .tree-node rect {
+      rx: 10;
+      ry: 10;
+      stroke-width: 2;
+      transition: all 0.2s;
+    }
+    .tree-node rect.node-locked { fill: var(--surface); stroke: var(--border); opacity: 0.45; }
+    .tree-node rect.node-unlocked { fill: var(--green-dim); stroke: var(--green); }
+    .tree-node rect.node-available { fill: var(--surface); stroke: var(--yellow); stroke-dasharray: 6 3; }
+    .tree-node text { fill: var(--text); font-size: 13px; font-family: inherit; pointer-events: none; }
+    .tree-node text.node-label-locked { opacity: 0.45; }
+    .tree-node .node-check { font-size: 14px; }
+    .tree-node .node-diff-dot { transition: fill 0.2s; }
+
     footer { text-align: center; padding: 2rem; color: var(--text-dim); font-size: 0.8rem; }
     footer a { color: var(--blue); text-decoration: none; }
   </style>
@@ -227,6 +256,7 @@
     let unlocked = JSON.parse(localStorage.getItem('tricktree-unlocked') || '[]');
     let filter = 'all';
     let searchQuery = '';
+    let viewMode = 'grid'; // 'grid' or 'tree'
 
     function save() { localStorage.setItem('tricktree-unlocked', JSON.stringify(unlocked)); }
     function isUnlocked(id) { return unlocked.includes(id); }
@@ -252,16 +282,24 @@
 
     function renderControls() {
       const cats = ['all', ...Object.keys(CATEGORIES)];
-      document.getElementById('controls').innerHTML = cats.map(c =>
+      const viewBtns = `<button class="${viewMode==='grid'?'active':''}" onclick="setView('grid')">📋 Grid</button><button class="${viewMode==='tree'?'active':''}" onclick="setView('tree')">🌳 Skill Tree</button>`;
+      document.getElementById('controls').innerHTML = viewBtns + '<span style="width:1px;height:24px;background:var(--border);margin:0 0.25rem"></span>' + cats.map(c =>
         `<button class="${filter === c ? 'active' : ''}" onclick="setFilter('${c}')">${c === 'all' ? '🎯 All' : CATEGORIES[c].icon + ' ' + CATEGORIES[c].name}</button>`
       ).join('');
     }
+
+    function setView(v) { viewMode = v; render(); }
 
     function onSearch(q) { searchQuery = q.trim().toLowerCase(); renderTree(); }
 
     function setFilter(f) { filter = f; renderControls(); renderTree(); }
 
     function renderTree() {
+      if (viewMode === 'tree') return renderSkillTree();
+      renderGridView();
+    }
+
+    function renderGridView() {
       const container = document.getElementById('tree');
       const cats = filter === 'all' ? Object.keys(CATEGORIES) : [filter];
       container.innerHTML = cats.map(cat => {
@@ -291,6 +329,99 @@
             </div>
           </div>`;
       }).join('');
+    }
+
+    function renderSkillTree() {
+      const container = document.getElementById('tree');
+      // Filter tricks by category
+      const cats = filter === 'all' ? Object.keys(CATEGORIES) : [filter];
+      const filtered = tricks.filter(t => cats.includes(t.category)).filter(t => {
+        if (!searchQuery) return true;
+        return t.name.toLowerCase().includes(searchQuery)
+          || t.category.toLowerCase().includes(searchQuery)
+          || (CATEGORIES[t.category]?.name||'').toLowerCase().includes(searchQuery)
+          || String(t.difficulty) === searchQuery;
+      });
+      if (!filtered.length) { container.innerHTML = '<p style="text-align:center;color:var(--text-dim);padding:3rem">No tricks match your filter.</p>'; return; }
+      const filteredIds = new Set(filtered.map(t => t.id));
+
+      // Compute depth (longest path from root)
+      const depthOf = {};
+      function computeDepth(t) {
+        if (depthOf[t.id] !== undefined) return depthOf[t.id];
+        if (!t.prereqs.length || t.prereqs.every(p => !filteredIds.has(p))) { depthOf[t.id] = 0; return 0; }
+        const d = 1 + Math.max(...t.prereqs.filter(p => filteredIds.has(p)).map(pid => computeDepth(tricks.find(x => x.id === pid))));
+        depthOf[t.id] = d;
+        return d;
+      }
+      filtered.forEach(t => computeDepth(t));
+
+      // Group by depth
+      const layers = {};
+      filtered.forEach(t => { (layers[depthOf[t.id]] = layers[depthOf[t.id]] || []).push(t); });
+      const maxDepth = Math.max(...Object.keys(layers).map(Number));
+
+      // Layout params
+      const nodeW = 150, nodeH = 52, padX = 40, padY = 80;
+      const maxCols = Math.max(...Object.values(layers).map(l => l.length));
+      const svgW = Math.max(600, maxCols * (nodeW + padX) + padX);
+      const svgH = (maxDepth + 1) * (nodeH + padY) + padY * 2;
+
+      // Assign positions
+      const pos = {};
+      for (let d = 0; d <= maxDepth; d++) {
+        const row = layers[d] || [];
+        const totalW = row.length * nodeW + (row.length - 1) * padX;
+        const startX = (svgW - totalW) / 2;
+        row.forEach((t, i) => {
+          pos[t.id] = {
+            x: startX + i * (nodeW + padX),
+            y: padY + d * (nodeH + padY),
+            cx: startX + i * (nodeW + padX) + nodeW / 2,
+            cy: padY + d * (nodeH + padY) + nodeH / 2
+          };
+        });
+      }
+
+      // Build SVG
+      let lines = '';
+      let nodes = '';
+      const catColors = { basics: '#4ade80', fundamentals: '#60a5fa', flips: '#a78bfa', grinds: '#fb923c', transition: '#f87171' };
+
+      // Draw edges
+      filtered.forEach(t => {
+        t.prereqs.filter(p => filteredIds.has(p)).forEach(pid => {
+          const from = pos[pid], to = pos[t.id];
+          if (!from || !to) return;
+          const bothUnlocked = isUnlocked(pid) && isUnlocked(t.id);
+          const avail = isUnlocked(pid) && !isUnlocked(t.id) && canUnlock(t);
+          const cls = bothUnlocked ? 'lit' : avail ? 'available-edge' : '';
+          lines += `<line x1="${from.cx}" y1="${from.cy + nodeH/2}" x2="${to.cx}" y2="${to.cy - nodeH/2}" class="${cls}"/>`;
+        });
+      });
+
+      // Draw nodes
+      filtered.forEach(t => {
+        const p = pos[t.id];
+        if (!p) return;
+        const status = getStatus(t);
+        const rectCls = status === 'unlocked' ? 'node-unlocked' : status === 'available' ? 'node-available' : 'node-locked';
+        const textCls = status === 'locked' ? 'node-label-locked' : '';
+        const clickHandler = status !== 'locked' ? `openModal('${t.id}')` : '';
+        // Difficulty dots
+        let dots = '';
+        for (let i = 0; i < 10; i++) {
+          dots += `<circle class="node-diff-dot" cx="${p.x + 15 + i * 12}" cy="${p.y + nodeH - 10}" r="3" fill="${i < t.difficulty ? (catColors[t.category] || '#fb923c') : '#333'}"/>`;
+        }
+        const check = status === 'unlocked' ? `<text class="node-check" x="${p.x + nodeW - 20}" y="${p.y + 18}">✅</text>` : '';
+        nodes += `<g class="tree-node" onclick="${clickHandler}">
+          <rect class="${rectCls}" x="${p.x}" y="${p.y}" width="${nodeW}" height="${nodeH}"/>
+          <text class="${textCls}" x="${p.cx}" y="${p.y + 22}" text-anchor="middle" font-weight="600">${t.name.length > 16 ? t.name.slice(0,15)+'…' : t.name}</text>
+          ${dots}${check}
+        </g>`;
+      });
+
+      container.innerHTML = `<div class="tree-view"><svg class="tree-svg" width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}">${lines}${nodes}</svg></div>`;
     }
 
     function openModal(id) {
