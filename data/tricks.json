@@ -6,14 +6,17 @@
     "difficulty": 1,
     "prereqs": [],
     "description": "Riding and pushing on flat ground. The foundation of everything.",
-    "tips": "Keep your front foot over the bolts, push with your back foot, keep your weight centered."
+    "tips": "Keep your front foot over the bolts, push with your back foot, keep your weight centered.",
+    "videoUrl": "https://www.youtube.com/watch?v=80sMBIkR8PU"
   },
   {
     "id": "tic-tac",
     "name": "Tic-Tac",
     "category": "basics",
     "difficulty": 1,
-    "prereqs": ["push"],
+    "prereqs": [
+      "push"
+    ],
     "description": "Shifting weight to lift the front wheels and pivot side to side to gain momentum.",
     "tips": "Press down on the tail slightly, swing your shoulders to guide direction."
   },
@@ -22,62 +25,82 @@
     "name": "Manual",
     "category": "basics",
     "difficulty": 2,
-    "prereqs": ["push"],
+    "prereqs": [
+      "push"
+    ],
     "description": "Balancing on the back wheels while rolling.",
-    "tips": "Find the balance point — lean back just enough without scraping the tail. Arms help balance."
+    "tips": "Find the balance point \u2014 lean back just enough without scraping the tail. Arms help balance.",
+    "videoUrl": "https://www.youtube.com/watch?v=dGMGOdRQgkU"
   },
   {
     "id": "nose-manual",
     "name": "Nose Manual",
     "category": "basics",
     "difficulty": 3,
-    "prereqs": ["manual"],
+    "prereqs": [
+      "manual"
+    ],
     "description": "Balancing on the front wheels while rolling.",
-    "tips": "Shift weight forward over the nose. Harder than a regular manual — commit!"
+    "tips": "Shift weight forward over the nose. Harder than a regular manual \u2014 commit!"
   },
   {
     "id": "ollie",
     "name": "Ollie",
     "category": "fundamentals",
     "difficulty": 3,
-    "prereqs": ["push", "tic-tac"],
-    "description": "The foundational trick — popping the board into the air without using your hands.",
-    "tips": "Pop the tail, slide your front foot up, jump with the board. Timing is everything."
+    "prereqs": [
+      "push",
+      "tic-tac"
+    ],
+    "description": "The foundational trick \u2014 popping the board into the air without using your hands.",
+    "tips": "Pop the tail, slide your front foot up, jump with the board. Timing is everything.",
+    "videoUrl": "https://www.youtube.com/watch?v=QkeOAcj8Y5k"
   },
   {
     "id": "frontside-180",
     "name": "Frontside 180",
     "category": "fundamentals",
     "difficulty": 4,
-    "prereqs": ["ollie"],
-    "description": "An ollie with a 180° frontside rotation.",
-    "tips": "Wind up your shoulders before popping, let your body lead the rotation."
+    "prereqs": [
+      "ollie"
+    ],
+    "description": "An ollie with a 180\u00b0 frontside rotation.",
+    "tips": "Wind up your shoulders before popping, let your body lead the rotation.",
+    "videoUrl": "https://www.youtube.com/watch?v=UKXlMKVdhGc"
   },
   {
     "id": "backside-180",
     "name": "Backside 180",
     "category": "fundamentals",
     "difficulty": 4,
-    "prereqs": ["ollie"],
-    "description": "An ollie with a 180° backside rotation.",
-    "tips": "Turn your head and shoulders backside, the board will follow."
+    "prereqs": [
+      "ollie"
+    ],
+    "description": "An ollie with a 180\u00b0 backside rotation.",
+    "tips": "Turn your head and shoulders backside, the board will follow.",
+    "videoUrl": "https://www.youtube.com/watch?v=VkiRYKJqfNs"
   },
   {
     "id": "pop-shuvit",
     "name": "Pop Shove-it",
     "category": "fundamentals",
     "difficulty": 3,
-    "prereqs": ["ollie"],
-    "description": "The board rotates 180° under your feet (backside) while you stay facing forward.",
-    "tips": "Scoop the tail behind you, keep your shoulders straight, catch with your front foot."
+    "prereqs": [
+      "ollie"
+    ],
+    "description": "The board rotates 180\u00b0 under your feet (backside) while you stay facing forward.",
+    "tips": "Scoop the tail behind you, keep your shoulders straight, catch with your front foot.",
+    "videoUrl": "https://www.youtube.com/watch?v=1pmR0kF3Xro"
   },
   {
     "id": "fs-pop-shuvit",
     "name": "Frontside Pop Shove-it",
     "category": "fundamentals",
     "difficulty": 4,
-    "prereqs": ["pop-shuvit"],
-    "description": "The board rotates 180° frontside under your feet.",
+    "prereqs": [
+      "pop-shuvit"
+    ],
+    "description": "The board rotates 180\u00b0 frontside under your feet.",
     "tips": "Scoop the tail in front of you. Less common but a great trick to have."
   },
   {
@@ -85,34 +108,46 @@
     "name": "Kickflip",
     "category": "flips",
     "difficulty": 5,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "The board flips heelside while in the air. The king of flatground tricks.",
-    "tips": "Flick your front foot off the heel edge of the nose. Commit to landing on the board."
+    "tips": "Flick your front foot off the heel edge of the nose. Commit to landing on the board.",
+    "videoUrl": "https://www.youtube.com/watch?v=KAVfSbPFqnU"
   },
   {
     "id": "heelflip",
     "name": "Heelflip",
     "category": "flips",
     "difficulty": 5,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "The board flips toeside while in the air.",
-    "tips": "Push your front heel off the toeside edge. Keep your shoulders level."
+    "tips": "Push your front heel off the toeside edge. Keep your shoulders level.",
+    "videoUrl": "https://www.youtube.com/watch?v=SI2JvKiGOOk"
   },
   {
     "id": "varial-kickflip",
     "name": "Varial Kickflip",
     "category": "flips",
     "difficulty": 6,
-    "prereqs": ["kickflip", "pop-shuvit"],
+    "prereqs": [
+      "kickflip",
+      "pop-shuvit"
+    ],
     "description": "A kickflip combined with a backside pop shove-it.",
-    "tips": "Scoop and flick at the same time. The board does a lot — trust the catch."
+    "tips": "Scoop and flick at the same time. The board does a lot \u2014 trust the catch."
   },
   {
     "id": "varial-heelflip",
     "name": "Varial Heelflip",
     "category": "flips",
     "difficulty": 6,
-    "prereqs": ["heelflip", "fs-pop-shuvit"],
+    "prereqs": [
+      "heelflip",
+      "fs-pop-shuvit"
+    ],
     "description": "A heelflip combined with a frontside pop shove-it.",
     "tips": "Scoop frontside while flicking your heel. A stylish trick when done clean."
   },
@@ -121,44 +156,60 @@
     "name": "360 Flip (Tre Flip)",
     "category": "flips",
     "difficulty": 7,
-    "prereqs": ["kickflip", "pop-shuvit"],
+    "prereqs": [
+      "kickflip",
+      "pop-shuvit"
+    ],
     "description": "A 360 backside pop shove-it combined with a kickflip. The holy grail.",
-    "tips": "Big scoop, slight flick. Let the board do its thing and catch it."
+    "tips": "Big scoop, slight flick. Let the board do its thing and catch it.",
+    "videoUrl": "https://www.youtube.com/watch?v=ix5-EBKH4gA"
   },
   {
     "id": "hardflip",
     "name": "Hardflip",
     "category": "flips",
     "difficulty": 7,
-    "prereqs": ["kickflip", "fs-pop-shuvit"],
+    "prereqs": [
+      "kickflip",
+      "fs-pop-shuvit"
+    ],
     "description": "A frontside pop shove-it combined with a kickflip.",
-    "tips": "Scoop frontside and flick. The board goes between your legs — commit!"
+    "tips": "Scoop frontside and flick. The board goes between your legs \u2014 commit!"
   },
   {
     "id": "boardslide",
     "name": "Boardslide",
     "category": "grinds",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Ollie onto a rail or ledge and slide with the board perpendicular.",
-    "tips": "Ollie high enough, turn 90°, keep your weight centered over the rail."
+    "tips": "Ollie high enough, turn 90\u00b0, keep your weight centered over the rail.",
+    "videoUrl": "https://www.youtube.com/watch?v=j50MhUfgVgA"
   },
   {
     "id": "50-50",
     "name": "50-50 Grind",
     "category": "grinds",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Grinding on both trucks along a rail or ledge.",
-    "tips": "Ollie onto the obstacle, lock both trucks, lean slightly forward to keep momentum."
+    "tips": "Ollie onto the obstacle, lock both trucks, lean slightly forward to keep momentum.",
+    "videoUrl": "https://www.youtube.com/watch?v=FEJw6OOkRCE"
   },
   {
     "id": "5-0",
     "name": "5-0 Grind",
     "category": "grinds",
     "difficulty": 5,
-    "prereqs": ["50-50", "manual"],
-    "description": "Grinding on only the back truck — a manual on a rail.",
+    "prereqs": [
+      "50-50",
+      "manual"
+    ],
+    "description": "Grinding on only the back truck \u2014 a manual on a rail.",
     "tips": "Lock the back truck, keep your weight centered. Balance is key."
   },
   {
@@ -166,7 +217,10 @@
     "name": "Nosegrind",
     "category": "grinds",
     "difficulty": 6,
-    "prereqs": ["50-50", "nose-manual"],
+    "prereqs": [
+      "50-50",
+      "nose-manual"
+    ],
     "description": "Grinding on only the front truck.",
     "tips": "Ollie and shift weight to the nose. Coming off clean is the hard part."
   },
@@ -175,7 +229,9 @@
     "name": "Crooked Grind",
     "category": "grinds",
     "difficulty": 6,
-    "prereqs": ["nosegrind"],
+    "prereqs": [
+      "nosegrind"
+    ],
     "description": "A nosegrind at an angle, with the nose dipping over the edge.",
     "tips": "Lock into the nosegrind but angle your approach. Style it out."
   },
@@ -184,7 +240,10 @@
     "name": "Smith Grind",
     "category": "grinds",
     "difficulty": 6,
-    "prereqs": ["5-0", "boardslide"],
+    "prereqs": [
+      "5-0",
+      "boardslide"
+    ],
     "description": "Back truck grinds while the board dips below the ledge/rail.",
     "tips": "Approach at a slight angle, lock the back truck, let the nose dip below."
   },
@@ -193,7 +252,10 @@
     "name": "Feeble Grind",
     "category": "grinds",
     "difficulty": 6,
-    "prereqs": ["50-50", "boardslide"],
+    "prereqs": [
+      "50-50",
+      "boardslide"
+    ],
     "description": "Back truck grinds on top, front truck passes over the other side.",
     "tips": "Like a 50-50 but your front truck goes over. Lean into it."
   },
@@ -202,7 +264,10 @@
     "name": "Kickflip Boardslide",
     "category": "grinds",
     "difficulty": 8,
-    "prereqs": ["kickflip", "boardslide"],
+    "prereqs": [
+      "kickflip",
+      "boardslide"
+    ],
     "description": "Kickflip into a boardslide. A proper tech trick.",
     "tips": "Kickflip early, spot the rail, lock in. Confidence is everything."
   },
@@ -211,34 +276,46 @@
     "name": "Drop In",
     "category": "transition",
     "difficulty": 2,
-    "prereqs": ["push"],
+    "prereqs": [
+      "push"
+    ],
     "description": "Dropping into a ramp or bowl from the coping.",
-    "tips": "Stomp your front foot down and lean forward. DO NOT lean back."
+    "tips": "Stomp your front foot down and lean forward. DO NOT lean back.",
+    "videoUrl": "https://www.youtube.com/watch?v=u0JbFmIERvQ"
   },
   {
     "id": "rock-to-fakie",
     "name": "Rock to Fakie",
     "category": "transition",
     "difficulty": 3,
-    "prereqs": ["drop-in"],
+    "prereqs": [
+      "drop-in"
+    ],
     "description": "Roll up a ramp, rock the front wheels over the coping, roll back fakie.",
-    "tips": "Approach with speed, let the front wheels go over, shift weight back to roll in fakie."
+    "tips": "Approach with speed, let the front wheels go over, shift weight back to roll in fakie.",
+    "videoUrl": "https://www.youtube.com/watch?v=5daiJuEqPlY"
   },
   {
     "id": "axle-stall",
     "name": "Axle Stall",
     "category": "transition",
     "difficulty": 4,
-    "prereqs": ["drop-in", "50-50"],
+    "prereqs": [
+      "drop-in",
+      "50-50"
+    ],
     "description": "A 50-50 stall on the coping of a ramp.",
-    "tips": "Ride up, turn 90° and lock both trucks on the coping, then drop back in."
+    "tips": "Ride up, turn 90\u00b0 and lock both trucks on the coping, then drop back in."
   },
   {
     "id": "blunt-to-fakie",
     "name": "Blunt to Fakie",
     "category": "transition",
     "difficulty": 6,
-    "prereqs": ["axle-stall", "manual"],
+    "prereqs": [
+      "axle-stall",
+      "manual"
+    ],
     "description": "Stall on the tail on top of the coping, then drop back in fakie.",
     "tips": "Pop up to blunt, balance for a moment, then shift weight to come back in."
   }
