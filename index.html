@@ -68,6 +68,24 @@
     }
     .controls button:hover { border-color: var(--green); }
     .controls button.active { background: var(--green-dim); border-color: var(--green); color: var(--green); }
+    .search-bar {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 1rem 0.5rem;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 0.65rem 1rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-bar input:focus { border-color: var(--green); }
+    .search-bar input::placeholder { color: var(--text-dim); }
     .tree-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -186,6 +204,9 @@
   </header>
   <div class="stats-bar" id="stats"></div>
   <div class="controls" id="controls"></div>
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="🔍 Search tricks by name, category, or difficulty (1-10)..." oninput="onSearch(this.value)">
+  </div>
   <div class="tree-container" id="tree"></div>
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal" id="modal"></div>
@@ -205,6 +226,7 @@
     let tricks = [];
     let unlocked = JSON.parse(localStorage.getItem('tricktree-unlocked') || '[]');
     let filter = 'all';
+    let searchQuery = '';
 
     function save() { localStorage.setItem('tricktree-unlocked', JSON.stringify(unlocked)); }
     function isUnlocked(id) { return unlocked.includes(id); }
@@ -235,13 +257,21 @@
       ).join('');
     }
 
+    function onSearch(q) { searchQuery = q.trim().toLowerCase(); renderTree(); }
+
     function setFilter(f) { filter = f; renderControls(); renderTree(); }
 
     function renderTree() {
       const container = document.getElementById('tree');
       const cats = filter === 'all' ? Object.keys(CATEGORIES) : [filter];
       container.innerHTML = cats.map(cat => {
-        const catTricks = tricks.filter(t => t.category === cat);
+        const catTricks = tricks.filter(t => t.category === cat).filter(t => {
+          if (!searchQuery) return true;
+          return t.name.toLowerCase().includes(searchQuery)
+            || t.category.toLowerCase().includes(searchQuery)
+            || (CATEGORIES[t.category]?.name||'').toLowerCase().includes(searchQuery)
+            || String(t.difficulty) === searchQuery;
+        });
         if (!catTricks.length) return '';
         return `
           <div class="category-section">
