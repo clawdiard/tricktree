@@ -238,6 +238,11 @@
   </header>
   <div class="stats-bar" id="stats"></div>
   <div class="controls" id="controls"></div>
+  <div class="share-controls" style="display:flex;justify-content:center;gap:0.5rem;padding:0 1rem 0.75rem;flex-wrap:wrap">
+    <button onclick="exportJSON()" style="padding:0.4rem 0.8rem;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:6px;cursor:pointer;font-size:0.8rem">📥 Export JSON</button>
+    <button onclick="exportURL()" style="padding:0.4rem 0.8rem;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:6px;cursor:pointer;font-size:0.8rem">🔗 Share Link</button>
+    <button onclick="importJSON()" style="padding:0.4rem 0.8rem;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:6px;cursor:pointer;font-size:0.8rem">📤 Import JSON</button>
+  </div>
   <div class="search-bar">
     <input type="text" id="search" placeholder="🔍 Search tricks by name, category, or difficulty (1-10)..." oninput="onSearch(this.value)">
   </div>
@@ -259,11 +264,77 @@
     };
     let tricks = [];
     let unlocked = JSON.parse(localStorage.getItem('tricktree-unlocked') || '[]');
+
+    // Import from URL hash on load
+    (function importFromHash() {
+      const hash = window.location.hash;
+      if (hash.startsWith('#progress=')) {
+        try {
+          const data = JSON.parse(decodeURIComponent(hash.slice('#progress='.length)));
+          if (Array.isArray(data) && data.length) {
+            unlocked = data;
+            localStorage.setItem('tricktree-unlocked', JSON.stringify(unlocked));
+            history.replaceState(null, '', window.location.pathname);
+          }
+        } catch(e) { console.warn('Invalid progress hash', e); }
+      }
+    })();
     let filter = 'all';
     let searchQuery = '';
     let viewMode = 'grid'; // 'grid' or 'tree'
 
     function save() { localStorage.setItem('tricktree-unlocked', JSON.stringify(unlocked)); }
+
+    function exportJSON() {
+      const blob = new Blob([JSON.stringify(unlocked, null, 2)], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'tricktree-progress.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function exportURL() {
+      const url = window.location.origin + window.location.pathname + '#progress=' + encodeURIComponent(JSON.stringify(unlocked));
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('📋 Share link copied to clipboard!');
+      }).catch(() => {
+        prompt('Copy this link:', url);
+      });
+    }
+
+    function importJSON() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      input.onchange = e => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = ev => {
+          try {
+            const data = JSON.parse(ev.target.result);
+            if (!Array.isArray(data)) throw new Error('Not an array');
+            unlocked = data;
+            save();
+            render();
+            showToast(`✅ Imported ${data.length} tricks!`);
+          } catch(err) { showToast('❌ Invalid file'); }
+        };
+        reader.readAsText(file);
+      };
+      input.click();
+    }
+
+    function showToast(msg) {
+      let t = document.getElementById('toast');
+      if (!t) { t = document.createElement('div'); t.id = 'toast'; document.body.appendChild(t); }
+      t.textContent = msg;
+      t.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#e8e8e8;padding:0.75rem 1.5rem;border-radius:8px;border:1px solid #4ade80;z-index:10000;font-size:0.9rem;transition:opacity 0.3s';
+      t.style.opacity = '1';
+      setTimeout(() => { t.style.opacity = '0'; }, 2500);
+    }
+
     function isUnlocked(id) { return unlocked.includes(id); }
     function canUnlock(t) { return t.prereqs.every(p => isUnlocked(p)); }
 
