@@ -10,7 +10,7 @@ An interactive skill tree for skateboarders. Track your progression from pushing
 
 ## Features
 
-- 🌳 **Skill Tree** — 27 tricks organized by category with prerequisite chains
+- 🌳 **Skill Tree** — 60 tricks organized by category with prerequisite chains
 - 🔓 **Progression Tracking** — Mark tricks as learned, unlock new ones
 - 📊 **Stats Dashboard** — See your completion percentage and available tricks
 - 🎯 **Category Filters** — Focus on basics, flips, grinds, or transition
