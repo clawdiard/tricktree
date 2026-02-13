@@ -14,7 +14,9 @@
     "name": "Tic-Tac",
     "category": "basics",
     "difficulty": 1,
-    "prereqs": ["push"],
+    "prereqs": [
+      "push"
+    ],
     "description": "Shifting weight to lift the front wheels and pivot side to side to gain momentum.",
     "tips": "Press down on the tail slightly, swing your shoulders to guide direction."
   },
@@ -23,7 +25,9 @@
     "name": "Manual",
     "category": "basics",
     "difficulty": 2,
-    "prereqs": ["push"],
+    "prereqs": [
+      "push"
+    ],
     "description": "Balancing on the back wheels while rolling.",
     "tips": "Find the balance point — lean back just enough without scraping the tail. Arms help balance.",
     "videoUrl": "https://www.youtube.com/watch?v=dGMGOdRQgkU"
@@ -33,16 +37,20 @@
     "name": "Nose Manual",
     "category": "basics",
     "difficulty": 3,
-    "prereqs": ["manual"],
+    "prereqs": [
+      "manual"
+    ],
     "description": "Balancing on the front wheels while rolling.",
     "tips": "Shift weight forward over the nose. Harder to balance than a regular manual — use your arms."
   },
   {
     "id": "ollie",
     "name": "Ollie",
-    "category": "flatground",
+    "category": "fundamentals",
     "difficulty": 3,
-    "prereqs": ["push"],
+    "prereqs": [
+      "push"
+    ],
     "description": "The foundational jump trick. Pop the tail and slide your front foot up to level out.",
     "tips": "Pop hard, slide your front foot, and jump with the board. Timing is everything.",
     "videoUrl": "https://www.youtube.com/watch?v=QkeOAcj8Y5k"
@@ -50,124 +58,153 @@
   {
     "id": "nollie",
     "name": "Nollie",
-    "category": "flatground",
+    "category": "fundamentals",
     "stance": "nollie",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "An ollie popped from the nose instead of the tail. Front foot pops, back foot slides.",
     "tips": "Reverse your ollie muscle memory. Pop with the front foot and slide the back foot up."
   },
   {
     "id": "switch-ollie",
     "name": "Switch Ollie",
-    "category": "flatground",
+    "category": "fundamentals",
     "stance": "switch",
     "difficulty": 5,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "An ollie performed in switch stance (riding opposite your natural stance).",
     "tips": "Practice riding switch first. It's like learning ollie all over again with your weak side."
   },
   {
     "id": "frontside-180",
     "name": "Frontside 180",
-    "category": "flatground",
+    "category": "fundamentals",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Ollie while rotating 180° frontside (chest faces forward during rotation).",
     "tips": "Wind up your shoulders before popping. Lead with your upper body, the board follows."
   },
   {
     "id": "backside-180",
     "name": "Backside 180",
-    "category": "flatground",
+    "category": "fundamentals",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Ollie while rotating 180° backside (back faces forward during rotation).",
     "tips": "Look over your back shoulder and commit to the rotation. Scoop the tail slightly."
   },
   {
     "id": "fakie-frontside-180",
     "name": "Fakie Frontside 180",
-    "category": "flatground",
+    "category": "fundamentals",
     "stance": "fakie",
     "difficulty": 4,
-    "prereqs": ["frontside-180"],
+    "prereqs": [
+      "frontside-180"
+    ],
     "description": "Frontside 180 while riding fakie (backwards in your regular stance).",
     "tips": "One of the easier fakie tricks — the rotation feels natural coming out of fakie."
   },
   {
     "id": "nollie-backside-180",
     "name": "Nollie Backside 180",
-    "category": "flatground",
+    "category": "fundamentals",
     "stance": "nollie",
     "difficulty": 5,
-    "prereqs": ["nollie", "backside-180"],
+    "prereqs": [
+      "nollie",
+      "backside-180"
+    ],
     "description": "Backside 180 popped from the nose.",
     "tips": "Pop the nose and rotate backside. Wind up your shoulders before popping."
   },
   {
     "id": "switch-frontside-180",
     "name": "Switch Frontside 180",
-    "category": "flatground",
+    "category": "fundamentals",
     "stance": "switch",
     "difficulty": 6,
-    "prereqs": ["switch-ollie", "frontside-180"],
+    "prereqs": [
+      "switch-ollie",
+      "frontside-180"
+    ],
     "description": "Frontside 180 in switch stance.",
     "tips": "Combine switch riding confidence with frontside rotation. Commit fully."
   },
   {
     "id": "pop-shuvit",
     "name": "Pop Shove-It",
-    "category": "flatground",
+    "category": "fundamentals",
     "difficulty": 3,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "The board rotates 180° backside (under your feet) without a flip.",
     "tips": "Scoop the tail backside with your back foot. Keep your shoulders straight — don't rotate your body."
   },
   {
     "id": "fs-pop-shuvit",
     "name": "Frontside Pop Shove-It",
-    "category": "flatground",
+    "category": "fundamentals",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "The board rotates 180° frontside under your feet.",
     "tips": "Scoop the tail frontside. These feel awkward at first — keep your weight centered."
   },
   {
     "id": "fakie-pop-shuvit",
     "name": "Fakie Pop Shove-It",
-    "category": "flatground",
+    "category": "fundamentals",
     "stance": "fakie",
     "difficulty": 3,
-    "prereqs": ["pop-shuvit"],
+    "prereqs": [
+      "pop-shuvit"
+    ],
     "description": "Pop shove-it while riding fakie. Often easier than the regular version.",
     "tips": "A great beginner fakie trick. The scoop feels very natural rolling backwards."
   },
   {
     "id": "nollie-pop-shuvit",
     "name": "Nollie Pop Shove-It",
-    "category": "flatground",
+    "category": "fundamentals",
     "stance": "nollie",
     "difficulty": 4,
-    "prereqs": ["nollie", "pop-shuvit"],
+    "prereqs": [
+      "nollie",
+      "pop-shuvit"
+    ],
     "description": "Pop shove-it popped from the nose.",
     "tips": "Scoop the nose to spin the board. Keep centered and catch with your back foot."
   },
   {
     "id": "360-shuvit",
     "name": "360 Shove-It",
-    "category": "flatground",
+    "category": "fundamentals",
     "difficulty": 5,
-    "prereqs": ["pop-shuvit"],
+    "prereqs": [
+      "pop-shuvit"
+    ],
     "description": "The board rotates a full 360° under your feet without flipping.",
     "tips": "Bigger scoop than a pop shove-it. Stay directly above the board and catch it."
   },
   {
     "id": "kickflip",
     "name": "Kickflip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 5,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Ollie with a flick off the heelside edge of the nose to flip the board.",
     "tips": "Flick your front foot off the corner of the nose. The flick is a subtle ankle motion, not a kick.",
     "videoUrl": "https://www.youtube.com/watch?v=KaFMkLBUOJA"
@@ -175,159 +212,206 @@
   {
     "id": "heelflip",
     "name": "Heelflip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 5,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Ollie with a flick off the toeside edge of the nose to flip the board the opposite direction.",
     "tips": "Flick your heel off the toe-side of the nose. Keep your shoulders parallel to the board."
   },
   {
     "id": "fakie-kickflip",
     "name": "Fakie Kickflip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "fakie",
     "difficulty": 5,
-    "prereqs": ["kickflip"],
+    "prereqs": [
+      "kickflip"
+    ],
     "description": "Kickflip while riding fakie.",
     "tips": "Pop off the nose (which is now behind you) and flick. Many find this easier than regular."
   },
   {
     "id": "nollie-kickflip",
     "name": "Nollie Kickflip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "nollie",
     "difficulty": 6,
-    "prereqs": ["nollie", "kickflip"],
+    "prereqs": [
+      "nollie",
+      "kickflip"
+    ],
     "description": "Kickflip popped from the nose.",
     "tips": "Pop the nose and flick with your back foot. The flick direction is reversed from regular."
   },
   {
     "id": "switch-kickflip",
     "name": "Switch Kickflip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "switch",
     "difficulty": 7,
-    "prereqs": ["switch-ollie", "kickflip"],
+    "prereqs": [
+      "switch-ollie",
+      "kickflip"
+    ],
     "description": "Kickflip performed in switch stance.",
     "tips": "One of the hardest basic flip tricks. Requires solid switch ollie and flick control."
   },
   {
     "id": "switch-heelflip",
     "name": "Switch Heelflip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "switch",
     "difficulty": 7,
-    "prereqs": ["switch-ollie", "heelflip"],
+    "prereqs": [
+      "switch-ollie",
+      "heelflip"
+    ],
     "description": "Heelflip performed in switch stance.",
     "tips": "Many skaters find switch heelflips easier than switch kickflips. Commit to the flick."
   },
   {
     "id": "nollie-heelflip",
     "name": "Nollie Heelflip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "nollie",
     "difficulty": 6,
-    "prereqs": ["nollie", "heelflip"],
+    "prereqs": [
+      "nollie",
+      "heelflip"
+    ],
     "description": "Heelflip popped from the nose.",
     "tips": "A staple nollie trick. Pop the nose and flick your back heel off the edge."
   },
   {
     "id": "varial-kickflip",
     "name": "Varial Kickflip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 6,
-    "prereqs": ["kickflip", "pop-shuvit"],
+    "prereqs": [
+      "kickflip",
+      "pop-shuvit"
+    ],
     "description": "Pop shove-it combined with a kickflip. Board rotates 180° and flips.",
     "tips": "Scoop and flick at the same time. The board should shove-it and flip simultaneously."
   },
   {
     "id": "varial-heelflip",
     "name": "Varial Heelflip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 6,
-    "prereqs": ["heelflip", "fs-pop-shuvit"],
+    "prereqs": [
+      "heelflip",
+      "fs-pop-shuvit"
+    ],
     "description": "Frontside pop shove-it combined with a heelflip.",
     "tips": "Scoop frontside and flick the heel. The rotation and flip combine into one motion."
   },
   {
     "id": "tre-flip",
     "name": "360 Flip (Tre Flip)",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 7,
-    "prereqs": ["kickflip", "360-shuvit"],
+    "prereqs": [
+      "kickflip",
+      "360-shuvit"
+    ],
     "description": "360 shove-it with a kickflip. The holy grail of flatground tricks.",
     "tips": "It's all in the back foot scoop. Flick is subtle — the scoop does most of the work."
   },
   {
     "id": "hardflip",
     "name": "Hardflip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 7,
-    "prereqs": ["kickflip", "fs-pop-shuvit"],
+    "prereqs": [
+      "kickflip",
+      "fs-pop-shuvit"
+    ],
     "description": "Frontside pop shove-it combined with a kickflip. The board flips vertically between your legs.",
     "tips": "Scoop frontside and flick hard. Keep your legs apart to let the board flip through."
   },
   {
     "id": "inward-heelflip",
     "name": "Inward Heelflip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 7,
-    "prereqs": ["heelflip", "pop-shuvit"],
+    "prereqs": [
+      "heelflip",
+      "pop-shuvit"
+    ],
     "description": "Backside pop shove-it combined with a heelflip.",
     "tips": "Scoop backside and flick the heel. The board does a shove-it while heelflipping inward."
   },
   {
     "id": "laser-flip",
     "name": "Laser Flip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 9,
-    "prereqs": ["heelflip", "360-shuvit"],
+    "prereqs": [
+      "heelflip",
+      "360-shuvit"
+    ],
     "description": "360 frontside shove-it with a heelflip. One of the most difficult flatground tricks.",
     "tips": "Requires incredible scoop and flick coordination. The board does a full 360 rotation with a heelflip."
   },
   {
     "id": "impossible",
     "name": "Impossible",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 7,
-    "prereqs": ["ollie", "pop-shuvit"],
+    "prereqs": [
+      "ollie",
+      "pop-shuvit"
+    ],
     "description": "The board wraps vertically around your back foot in a full 360° rotation.",
     "tips": "Scoop straight down and wrap the board around your foot. Don't let it shove-it — it should go vertical."
   },
   {
     "id": "fakie-impossible",
     "name": "Fakie Impossible",
-    "category": "flatground",
+    "category": "flips",
     "stance": "fakie",
     "difficulty": 7,
-    "prereqs": ["impossible"],
+    "prereqs": [
+      "impossible"
+    ],
     "description": "Impossible while riding fakie.",
     "tips": "The scoop feels slightly different in fakie. Many find it comparable to regular."
   },
   {
     "id": "double-kickflip",
     "name": "Double Kickflip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 7,
-    "prereqs": ["kickflip"],
+    "prereqs": [
+      "kickflip"
+    ],
     "description": "A kickflip that rotates twice before catching.",
     "tips": "Flick harder and higher than a single kickflip. The extra flip needs more airtime."
   },
   {
     "id": "nightflip",
     "name": "Nightflip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 8,
-    "prereqs": ["tre-flip", "double-kickflip"],
+    "prereqs": [
+      "tre-flip",
+      "double-kickflip"
+    ],
     "description": "A 360 flip with a double kickflip. Extremely rare and technical.",
     "tips": "Maximum scoop, maximum flick, maximum commitment."
   },
   {
     "id": "gazelle-flip",
     "name": "Gazelle Flip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 9,
-    "prereqs": ["tre-flip", "backside-180"],
+    "prereqs": [
+      "tre-flip",
+      "backside-180"
+    ],
     "description": "360 flip with a 360 body rotation. The board and body both spin 360°.",
     "tips": "Wind up hard, scoop the tre flip, and commit to the full body spin. Land bolts."
   },
@@ -336,7 +420,9 @@
     "name": "Boardslide",
     "category": "grinds",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Ollie onto a rail/ledge and slide with the board perpendicular, middle of the deck on the obstacle.",
     "tips": "Ollie, turn 90°, and center your weight over the rail. Look at the end of the rail."
   },
@@ -345,7 +431,9 @@
     "name": "50-50 Grind",
     "category": "grinds",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Grinding on both trucks along a ledge or rail.",
     "tips": "Ollie onto the ledge and keep your weight centered. Lean slightly toward the obstacle."
   },
@@ -354,7 +442,9 @@
     "name": "5-0 Grind",
     "category": "grinds",
     "difficulty": 5,
-    "prereqs": ["50-50"],
+    "prereqs": [
+      "50-50"
+    ],
     "description": "Grinding on only the back truck, like a manual on the ledge.",
     "tips": "Ollie and lean back slightly to lock in the back truck. Balance like a manual."
   },
@@ -363,7 +453,10 @@
     "name": "Nosegrind",
     "category": "grinds",
     "difficulty": 6,
-    "prereqs": ["50-50", "nose-manual"],
+    "prereqs": [
+      "50-50",
+      "nose-manual"
+    ],
     "description": "Grinding on only the front truck.",
     "tips": "Ollie and shift weight forward to lock the front truck. Very technical — requires nose manual balance."
   },
@@ -372,7 +465,9 @@
     "name": "Crooked Grind",
     "category": "grinds",
     "difficulty": 6,
-    "prereqs": ["nosegrind"],
+    "prereqs": [
+      "nosegrind"
+    ],
     "description": "Nosegrind at an angle with the nose pressing into the ledge.",
     "tips": "Like a nosegrind but angled. Press the nose into the ledge to lock in."
   },
@@ -381,7 +476,9 @@
     "name": "Smith Grind",
     "category": "grinds",
     "difficulty": 6,
-    "prereqs": ["5-0"],
+    "prereqs": [
+      "5-0"
+    ],
     "description": "Back truck grinds while the board dips below the ledge on the toe side.",
     "tips": "Ollie and dip the nose below the ledge. The back truck locks in while the board angles down."
   },
@@ -390,7 +487,9 @@
     "name": "Feeble Grind",
     "category": "grinds",
     "difficulty": 6,
-    "prereqs": ["5-0"],
+    "prereqs": [
+      "5-0"
+    ],
     "description": "Back truck grinds while the board dips below the ledge on the heel side.",
     "tips": "Like a smith grind but the board goes over the other side. Commit to leaning in."
   },
@@ -399,7 +498,9 @@
     "name": "Overcrook",
     "category": "grinds",
     "difficulty": 7,
-    "prereqs": ["crooked-grind"],
+    "prereqs": [
+      "crooked-grind"
+    ],
     "description": "An exaggerated crooked grind where the board dips past the ledge.",
     "tips": "Press the nose hard into the ledge and let the board angle past it."
   },
@@ -408,7 +509,9 @@
     "name": "Bluntslide",
     "category": "grinds",
     "difficulty": 7,
-    "prereqs": ["boardslide"],
+    "prereqs": [
+      "boardslide"
+    ],
     "description": "The tail locks onto the ledge while sliding perpendicular — like a blunt stall but sliding.",
     "tips": "Ollie high, rotate 90°, and land with the tail hooking the ledge. Commit to sliding."
   },
@@ -417,7 +520,10 @@
     "name": "Nosebluntslide",
     "category": "grinds",
     "difficulty": 8,
-    "prereqs": ["boardslide", "nosegrind"],
+    "prereqs": [
+      "boardslide",
+      "nosegrind"
+    ],
     "description": "The nose locks onto the ledge while sliding. One of the most stylish grinds.",
     "tips": "Very technical. Ollie, rotate, and lock the nose onto the edge. Full commitment required."
   },
@@ -426,7 +532,10 @@
     "name": "Kickflip Backside Boardslide",
     "category": "grinds",
     "difficulty": 8,
-    "prereqs": ["kickflip", "boardslide"],
+    "prereqs": [
+      "kickflip",
+      "boardslide"
+    ],
     "description": "Kickflip into a backside boardslide on a rail or ledge.",
     "tips": "Flip the board and land into the boardslide. Requires great board control and commitment."
   },
@@ -435,7 +544,10 @@
     "name": "Kickflip 50-50",
     "category": "grinds",
     "difficulty": 7,
-    "prereqs": ["kickflip", "50-50"],
+    "prereqs": [
+      "kickflip",
+      "50-50"
+    ],
     "description": "Kickflip into a 50-50 grind.",
     "tips": "Flip the board and land with both trucks on the ledge. Timing the catch is key."
   },
@@ -444,7 +556,9 @@
     "name": "Drop In",
     "category": "transition",
     "difficulty": 3,
-    "prereqs": ["push"],
+    "prereqs": [
+      "push"
+    ],
     "description": "Standing at the top of a ramp and leaning in to ride down.",
     "tips": "Stomp your front foot and lean forward. The #1 mistake is leaning back — commit!",
     "videoUrl": "https://www.youtube.com/watch?v=9bBzfL9BLHU"
@@ -454,7 +568,9 @@
     "name": "Rock to Fakie",
     "category": "transition",
     "difficulty": 4,
-    "prereqs": ["drop-in"],
+    "prereqs": [
+      "drop-in"
+    ],
     "description": "Ride up the ramp, rock the front wheels over the coping, then come back down fakie.",
     "tips": "Let the front truck go over the coping, shift weight back, and roll back down. Don't hang up."
   },
@@ -463,7 +579,10 @@
     "name": "Axle Stall",
     "category": "transition",
     "difficulty": 5,
-    "prereqs": ["drop-in", "50-50"],
+    "prereqs": [
+      "drop-in",
+      "50-50"
+    ],
     "description": "50-50 stall on the coping of a ramp.",
     "tips": "Ride up, turn 90° to lock both trucks on the coping, then drop back in."
   },
@@ -472,7 +591,9 @@
     "name": "Blunt to Fakie",
     "category": "transition",
     "difficulty": 6,
-    "prereqs": ["axle-stall"],
+    "prereqs": [
+      "axle-stall"
+    ],
     "description": "Ride up, stall with the tail on the coping and board above the lip, then drop back in fakie.",
     "tips": "Pop up to blunt, balance momentarily, then shift weight to come back in fakie."
   },
@@ -481,7 +602,10 @@
     "name": "Disaster",
     "category": "transition",
     "difficulty": 6,
-    "prereqs": ["axle-stall", "backside-180"],
+    "prereqs": [
+      "axle-stall",
+      "backside-180"
+    ],
     "description": "Ollie to 180 above the coping, land with the middle of the board on the coping, then drop back in.",
     "tips": "Ollie, rotate 180, and stall the board on the coping before re-entering the ramp."
   },
@@ -490,74 +614,93 @@
     "name": "Kickflip Indy",
     "category": "transition",
     "difficulty": 8,
-    "prereqs": ["kickflip", "drop-in"],
+    "prereqs": [
+      "kickflip",
+      "drop-in"
+    ],
     "description": "Kickflip while grabbing indy (back hand grabs between the trucks on the toe side) on a ramp.",
     "tips": "Pop the kickflip off the lip, catch with an indy grab, and ride back in."
   },
   {
     "id": "fakie-tre-flip",
     "name": "Fakie 360 Flip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "fakie",
     "difficulty": 7,
-    "prereqs": ["tre-flip"],
+    "prereqs": [
+      "tre-flip"
+    ],
     "description": "360 flip while riding fakie. Many skaters find this easier than regular tre flip.",
     "tips": "The scoop from fakie feels very natural. Pop, scoop, and catch."
   },
   {
     "id": "nollie-tre-flip",
     "name": "Nollie 360 Flip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "nollie",
     "difficulty": 8,
-    "prereqs": ["nollie-kickflip", "tre-flip"],
+    "prereqs": [
+      "nollie-kickflip",
+      "tre-flip"
+    ],
     "description": "360 flip popped from the nose.",
     "tips": "Extremely technical. Scoop the nose for a 360 rotation while flicking."
   },
   {
     "id": "switch-tre-flip",
     "name": "Switch 360 Flip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "switch",
     "difficulty": 9,
-    "prereqs": ["switch-kickflip", "tre-flip"],
+    "prereqs": [
+      "switch-kickflip",
+      "tre-flip"
+    ],
     "description": "360 flip in switch stance. One of the most respected tricks in skateboarding.",
     "tips": "Requires masterful switch ability. Every part of this trick is hard."
   },
   {
     "id": "fakie-hardflip",
     "name": "Fakie Hardflip",
-    "category": "flatground",
+    "category": "flips",
     "stance": "fakie",
     "difficulty": 7,
-    "prereqs": ["hardflip"],
+    "prereqs": [
+      "hardflip"
+    ],
     "description": "Hardflip while riding fakie.",
     "tips": "Scoop frontside from fakie and flick. Let the board flip vertically between your legs."
   },
   {
     "id": "pressure-flip",
     "name": "Pressure Flip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 4,
-    "prereqs": ["ollie"],
+    "prereqs": [
+      "ollie"
+    ],
     "description": "Flip the board using foot pressure on the edge rather than a pop and flick.",
     "tips": "Press down on the heel or toe edge to make the board flip. No ollie needed — all pressure."
   },
   {
     "id": "hospital-flip",
     "name": "Hospital Flip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 5,
-    "prereqs": ["kickflip"],
+    "prereqs": [
+      "kickflip"
+    ],
     "description": "Half kickflip caught upside down with your front foot, then flipped back with a scoop.",
     "tips": "Catch the board mid-flip with your front foot on the grip side, then guide it back over."
   },
   {
     "id": "casper-flip",
     "name": "Casper Flip",
-    "category": "flatground",
+    "category": "flips",
     "difficulty": 6,
-    "prereqs": ["hospital-flip"],
+    "prereqs": [
+      "hospital-flip"
+    ],
     "description": "Half kickflip caught underneath with your back foot, then flipped back over.",
     "tips": "Guide the half-flipped board with your back foot underneath and scoop it back to grip-side up."
   }
