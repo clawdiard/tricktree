@@ -503,7 +503,7 @@
         </g>`;
       });
 
-      container.innerHTML = `<div class="tree-view"><svg class="tree-svg" width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}">${lines}${nodes}</svg></div>`;
+      container.innerHTML = `<div class="tree-view"><svg class="tree-svg" viewBox="0 0 ${svgW} ${svgH}" preserveAspectRatio="xMidYMin meet" style="width:100%;height:auto;max-height:80vh">${lines}${nodes}</svg></div>`;
     }
 
     function renderVideo(url) {
