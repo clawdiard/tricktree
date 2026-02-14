@@ -203,8 +203,8 @@
     .btn-close { background: var(--surface); color: var(--text-dim); }
     .btn-disabled { background: var(--surface); color: var(--text-dim); cursor: not-allowed; opacity: 0.5; }
     /* Tree View */
-    .tree-view { position: relative; overflow-x: auto; padding: 2rem 1rem; }
-    .tree-svg { display: block; margin: 0 auto; }
+    .tree-view { position: relative; overflow: auto; padding: 2rem 1rem; max-height: 80vh; }
+    .tree-svg { display: block; }
     .tree-svg line {
       stroke: var(--border);
       stroke-width: 2;
@@ -503,7 +503,10 @@
         </g>`;
       });
 
-      container.innerHTML = `<div class="tree-view"><svg class="tree-svg" viewBox="0 0 ${svgW} ${svgH}" preserveAspectRatio="xMidYMin meet" style="width:100%;height:auto;max-height:80vh">${lines}${nodes}</svg></div>`;
+      container.innerHTML = `<div class="tree-view"><svg class="tree-svg" width="${svgW}" height="${svgH}" viewBox="0 0 ${svgW} ${svgH}">${lines}${nodes}</svg></div>`;
+      // Auto-scroll to center the tree horizontally
+      const tv = container.querySelector('.tree-view');
+      if (tv) { tv.scrollLeft = (tv.scrollWidth - tv.clientWidth) / 2; }
     }
 
     function renderVideo(url) {
