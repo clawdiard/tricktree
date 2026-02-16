@@ -7,7 +7,7 @@
     "prereqs": [],
     "description": "Riding and pushing on flat ground. The foundation of everything.",
     "tips": "Keep your front foot over the bolts, push with your back foot, keep your weight centered.",
-    "videoUrl": "https://www.youtube.com/watch?v=80sMBIkR8PU"
+    "videoUrl": "https://www.youtube.com/watch?v=elvJPyWYBuY"
   },
   {
     "id": "tic-tac",
@@ -29,8 +29,8 @@
       "push"
     ],
     "description": "Balancing on the back wheels while rolling.",
-    "tips": "Find the balance point — lean back just enough without scraping the tail. Arms help balance.",
-    "videoUrl": "https://www.youtube.com/watch?v=dGMGOdRQgkU"
+    "tips": "Find the balance point \u2014 lean back just enough without scraping the tail. Arms help balance.",
+    "videoUrl": "https://www.youtube.com/watch?v=EoVh5VbgUcQ"
   },
   {
     "id": "nose-manual",
@@ -41,7 +41,7 @@
       "manual"
     ],
     "description": "Balancing on the front wheels while rolling.",
-    "tips": "Shift weight forward over the nose. Harder to balance than a regular manual — use your arms."
+    "tips": "Shift weight forward over the nose. Harder to balance than a regular manual \u2014 use your arms."
   },
   {
     "id": "ollie",
@@ -53,7 +53,7 @@
     ],
     "description": "The foundational jump trick. Pop the tail and slide your front foot up to level out.",
     "tips": "Pop hard, slide your front foot, and jump with the board. Timing is everything.",
-    "videoUrl": "https://www.youtube.com/watch?v=QkeOAcj8Y5k"
+    "videoUrl": "https://www.youtube.com/watch?v=JNmUK9fvrAs"
   },
   {
     "id": "nollie",
@@ -87,7 +87,7 @@
     "prereqs": [
       "ollie"
     ],
-    "description": "Ollie while rotating 180° frontside (chest faces forward during rotation).",
+    "description": "Ollie while rotating 180\u00b0 frontside (chest faces forward during rotation).",
     "tips": "Wind up your shoulders before popping. Lead with your upper body, the board follows."
   },
   {
@@ -98,7 +98,7 @@
     "prereqs": [
       "ollie"
     ],
-    "description": "Ollie while rotating 180° backside (back faces forward during rotation).",
+    "description": "Ollie while rotating 180\u00b0 backside (back faces forward during rotation).",
     "tips": "Look over your back shoulder and commit to the rotation. Scoop the tail slightly."
   },
   {
@@ -111,7 +111,7 @@
       "frontside-180"
     ],
     "description": "Frontside 180 while riding fakie (backwards in your regular stance).",
-    "tips": "One of the easier fakie tricks — the rotation feels natural coming out of fakie."
+    "tips": "One of the easier fakie tricks \u2014 the rotation feels natural coming out of fakie."
   },
   {
     "id": "nollie-backside-180",
@@ -147,8 +147,8 @@
     "prereqs": [
       "ollie"
     ],
-    "description": "The board rotates 180° backside (under your feet) without a flip.",
-    "tips": "Scoop the tail backside with your back foot. Keep your shoulders straight — don't rotate your body."
+    "description": "The board rotates 180\u00b0 backside (under your feet) without a flip.",
+    "tips": "Scoop the tail backside with your back foot. Keep your shoulders straight \u2014 don't rotate your body."
   },
   {
     "id": "fs-pop-shuvit",
@@ -158,8 +158,8 @@
     "prereqs": [
       "ollie"
     ],
-    "description": "The board rotates 180° frontside under your feet.",
-    "tips": "Scoop the tail frontside. These feel awkward at first — keep your weight centered."
+    "description": "The board rotates 180\u00b0 frontside under your feet.",
+    "tips": "Scoop the tail frontside. These feel awkward at first \u2014 keep your weight centered."
   },
   {
     "id": "fakie-pop-shuvit",
@@ -194,7 +194,7 @@
     "prereqs": [
       "pop-shuvit"
     ],
-    "description": "The board rotates a full 360° under your feet without flipping.",
+    "description": "The board rotates a full 360\u00b0 under your feet without flipping.",
     "tips": "Bigger scoop than a pop shove-it. Stay directly above the board and catch it."
   },
   {
@@ -207,7 +207,7 @@
     ],
     "description": "Ollie with a flick off the heelside edge of the nose to flip the board.",
     "tips": "Flick your front foot off the corner of the nose. The flick is a subtle ankle motion, not a kick.",
-    "videoUrl": "https://www.youtube.com/watch?v=KaFMkLBUOJA"
+    "videoUrl": "https://www.youtube.com/watch?v=jxTGfQT6-lU"
   },
   {
     "id": "heelflip",
@@ -293,7 +293,7 @@
       "kickflip",
       "pop-shuvit"
     ],
-    "description": "Pop shove-it combined with a kickflip. Board rotates 180° and flips.",
+    "description": "Pop shove-it combined with a kickflip. Board rotates 180\u00b0 and flips.",
     "tips": "Scoop and flick at the same time. The board should shove-it and flip simultaneously."
   },
   {
@@ -318,7 +318,7 @@
       "360-shuvit"
     ],
     "description": "360 shove-it with a kickflip. The holy grail of flatground tricks.",
-    "tips": "It's all in the back foot scoop. Flick is subtle — the scoop does most of the work."
+    "tips": "It's all in the back foot scoop. Flick is subtle \u2014 the scoop does most of the work."
   },
   {
     "id": "hardflip",
@@ -365,8 +365,8 @@
       "ollie",
       "pop-shuvit"
     ],
-    "description": "The board wraps vertically around your back foot in a full 360° rotation.",
-    "tips": "Scoop straight down and wrap the board around your foot. Don't let it shove-it — it should go vertical."
+    "description": "The board wraps vertically around your back foot in a full 360\u00b0 rotation.",
+    "tips": "Scoop straight down and wrap the board around your foot. Don't let it shove-it \u2014 it should go vertical."
   },
   {
     "id": "fakie-impossible",
@@ -412,7 +412,7 @@
       "tre-flip",
       "backside-180"
     ],
-    "description": "360 flip with a 360 body rotation. The board and body both spin 360°.",
+    "description": "360 flip with a 360 body rotation. The board and body both spin 360\u00b0.",
     "tips": "Wind up hard, scoop the tre flip, and commit to the full body spin. Land bolts."
   },
   {
@@ -424,7 +424,7 @@
       "ollie"
     ],
     "description": "Ollie onto a rail/ledge and slide with the board perpendicular, middle of the deck on the obstacle.",
-    "tips": "Ollie, turn 90°, and center your weight over the rail. Look at the end of the rail."
+    "tips": "Ollie, turn 90\u00b0, and center your weight over the rail. Look at the end of the rail."
   },
   {
     "id": "50-50",
@@ -458,7 +458,7 @@
       "nose-manual"
     ],
     "description": "Grinding on only the front truck.",
-    "tips": "Ollie and shift weight forward to lock the front truck. Very technical — requires nose manual balance."
+    "tips": "Ollie and shift weight forward to lock the front truck. Very technical \u2014 requires nose manual balance."
   },
   {
     "id": "crooked-grind",
@@ -512,8 +512,8 @@
     "prereqs": [
       "boardslide"
     ],
-    "description": "The tail locks onto the ledge while sliding perpendicular — like a blunt stall but sliding.",
-    "tips": "Ollie high, rotate 90°, and land with the tail hooking the ledge. Commit to sliding."
+    "description": "The tail locks onto the ledge while sliding perpendicular \u2014 like a blunt stall but sliding.",
+    "tips": "Ollie high, rotate 90\u00b0, and land with the tail hooking the ledge. Commit to sliding."
   },
   {
     "id": "nosebluntslide",
@@ -560,8 +560,8 @@
       "push"
     ],
     "description": "Standing at the top of a ramp and leaning in to ride down.",
-    "tips": "Stomp your front foot and lean forward. The #1 mistake is leaning back — commit!",
-    "videoUrl": "https://www.youtube.com/watch?v=9bBzfL9BLHU"
+    "tips": "Stomp your front foot and lean forward. The #1 mistake is leaning back \u2014 commit!",
+    "videoUrl": "https://www.youtube.com/watch?v=6wIUnmPlGNo"
   },
   {
     "id": "rock-to-fakie",
@@ -584,7 +584,7 @@
       "50-50"
     ],
     "description": "50-50 stall on the coping of a ramp.",
-    "tips": "Ride up, turn 90° to lock both trucks on the coping, then drop back in."
+    "tips": "Ride up, turn 90\u00b0 to lock both trucks on the coping, then drop back in."
   },
   {
     "id": "blunt-to-fakie",
@@ -680,7 +680,7 @@
       "ollie"
     ],
     "description": "Flip the board using foot pressure on the edge rather than a pop and flick.",
-    "tips": "Press down on the heel or toe edge to make the board flip. No ollie needed — all pressure."
+    "tips": "Press down on the heel or toe edge to make the board flip. No ollie needed \u2014 all pressure."
   },
   {
     "id": "hospital-flip",
