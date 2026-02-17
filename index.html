@@ -180,7 +180,7 @@
     .modal .video-link { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--surface); padding: 0.5rem 0.75rem; border-radius: 8px; margin-bottom: 1rem; color: var(--blue); text-decoration: none; font-size: 0.9rem; transition: background 0.2s; }
     .modal .video-link:hover { background: var(--border); }
     .trick-card .video-badge { position: absolute; bottom: 0.5rem; right: 0.5rem; font-size: 0.85rem; opacity: 0.6; }
-    .stance-badge { font-size: 0.6rem; padding: 0.1rem 0.35rem; border-radius: 4px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; vertical-align: middle; }
+    .stance-badge { display: inline-block; width: 8px; height: 8px; border-radius: 50%; vertical-align: middle; margin-left: 0.3rem; }
     .stance-nollie { background: #7c3aed; color: #fff; }
     .stance-switch { background: #dc2626; color: #fff; }
     .stance-fakie { background: #0891b2; color: #fff; }
@@ -401,7 +401,7 @@
                 return `
                   <div class="trick-card ${status}" onclick="${status !== 'locked' ? `openModal('${t.id}')` : ''}">
                     ${status === 'unlocked' ? '<div class="trick-check">✅</div>' : ''}
-                    <div class="trick-name">${t.name}${t.stance ? ` <span class="stance-badge stance-${t.stance}" aria-hidden="true">${t.stance[0].toUpperCase()+t.stance.slice(1)}</span>` : ''}</div>
+                    <div class="trick-name">${t.name}${t.stance ? ` <span class="stance-badge stance-${t.stance}" aria-hidden="true"></span>` : ''}</div>
                     <div class="trick-diff">${Array.from({length: 10}, (_, i) => `<div class="dot ${i < t.difficulty ? 'filled' : ''}"></div>`).join('')}</div>
                     <div class="trick-desc">${t.description}</div>
                     ${t.prereqs.length ? `<div class="trick-prereqs">Requires: ${t.prereqs.map(p => `<span>${tricks.find(x=>x.id===p)?.name||p}</span>`).join(', ')}</div>` : ''}
